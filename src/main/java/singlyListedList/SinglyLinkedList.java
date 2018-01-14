@@ -25,19 +25,20 @@ public class SinglyLinkedList {
 
     /**
      * Metoda dodaje do listy kolejną wartość
+     *
      * @param value wartość, kótra ma zostać dodana
      */
-    public void add(Integer value){
+    public void add(Integer value) {
         Node node = new Node(value);
         //sprawdzam, czy w naszej liście już coś jest
-        if(head == null){
+        if (head == null) {
             //jeżeli lista jest pusta, to dodajemy pierwszy element.
             head = node;
         }
         //Analogicznie sprawdzamy, czy dodany element jest również ostatni.
-        if(tail == null){
+        if (tail == null) {
             tail = node;
-        }else {
+        } else {
             tail.setNext(node);
             tail = node;
         }
@@ -46,14 +47,83 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Metoda usuwa podany w parametrze element.
+     * @param element Node, który chcemy usunąć
+     */
+    public void remove(Node element) {
+        Node tmp = head;
+        Node prev = null;
+
+        while (tmp != null) {
+            if (tmp == element) {
+                //jeżeli head jest tym elementem, to trzeba go przesunąć
+                if (head == tmp) {
+                    head = tmp.getNext();
+                    size--;
+                    return;
+                }
+                prev.setNext(tmp.getNext());
+                size--;
+                return;
+            } else {
+                prev = tmp;
+                tmp = tmp.getNext();
+            }
+        }
+    }
+
+    /**
      * zwraca ilość elementów w liście.
+     *
      * @return
      */
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public Node getFirst(){
+    public Node getFirst() {
         return head;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Pobiera element z indeksem podanym w parametrze
+     *
+     * @param i
+     * @return
+     */
+    public Node getElementAt(int i) {
+        int index = 0;
+        Node next = head.getNext();
+        while (index <= i) {
+            if (index == i) {
+                return next;
+            }
+            index++;
+            next = next.getNext();
+        }
+        return null;
     }
 }

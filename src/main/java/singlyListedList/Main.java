@@ -9,6 +9,10 @@ public class Main {
         singlyLinkedList.add(4);
         singlyLinkedList.add(6);
 
+        Node toRemove = singlyLinkedList.getElementAt(1);
+
+        singlyLinkedList.remove(toRemove);
+
         printNodes(singlyLinkedList.getFirst());
     }
 
