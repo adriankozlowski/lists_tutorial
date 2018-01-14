@@ -85,29 +85,6 @@ public class SinglyLinkedList {
         return head;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * Pobiera element z indeksem podanym w parametrze
      *
