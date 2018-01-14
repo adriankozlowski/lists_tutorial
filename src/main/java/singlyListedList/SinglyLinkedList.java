@@ -93,14 +93,31 @@ public class SinglyLinkedList {
      */
     public Node getElementAt(int i) {
         int index = 0;
-        Node next = head.getNext();
+        if(i == 0){
+            return head;
+        }
+        Node next = head;
         while (index <= i) {
             if (index == i) {
                 return next;
             }
             index++;
-            next = next.getNext();
+            if(next.getNext()!=null) {
+                next = next.getNext();
+            }
         }
         return null;
+    }
+
+    /**
+     * Zwraca listę z odwrotną kolejnością.
+     * @return odwrócona lista.
+     */
+    public SinglyLinkedList reverse(){
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        for (int i = this.size-1; i>=0 ;i--) {
+            singlyLinkedList.add(getElementAt(i).getValue());
+        }
+        return singlyLinkedList;
     }
 }
