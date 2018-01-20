@@ -1,6 +1,8 @@
 package singlyListedList;
 
-public class SinglyLinkedList {
+import java.util.Iterator;
+
+public class SinglyLinkedList implements Iterable<Integer> {
 
     /**
      * Nie potrzebujemy gettera ani settera, ponieważ nie chcemy
@@ -119,5 +121,23 @@ public class SinglyLinkedList {
             singlyLinkedList.add(getElementAt(i).getValue());
         }
         return singlyLinkedList;
+    }
+
+    public Iterator<Integer> iterator() {
+        return new Iterator<Integer>() {
+            public boolean hasNext() {
+                return head!=null;
+            }
+
+            public void remove() {
+
+            }
+
+            public Integer next() {
+                Node tmp = head;
+                head = head.getNext();
+                return tmp.getValue();
+            }
+        };
     }
 }
