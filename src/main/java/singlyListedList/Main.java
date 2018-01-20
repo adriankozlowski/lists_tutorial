@@ -22,6 +22,19 @@ public class Main {
         while(iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+        iterator = singlyLinkedList.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+            iterator = singlyLinkedList.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        iterator = singlyLinkedList.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
     }
 
     private static void printNodes(Node node) {
