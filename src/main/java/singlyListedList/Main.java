@@ -24,6 +24,7 @@ public class Main {
         }
     }
 
+
     private static void printNodes(Node node) {
         Node tmpNode = node;
         while (tmpNode != null) {

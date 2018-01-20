@@ -124,16 +124,6 @@ public class SinglyLinkedList implements Iterable<Integer> {
     }
 
     public Iterator<Integer> iterator() {
-        return new Iterator<Integer>() {
-            public boolean hasNext() {
-                return head!=null;
-            }
-
-            public Integer next() {
-                Node tmp = head;
-                head = head.getNext();
-                return tmp.getValue();
-            }
-        };
+        return new MyIterator(head);
     }
 }
