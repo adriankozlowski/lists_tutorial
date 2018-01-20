@@ -129,10 +129,6 @@ public class SinglyLinkedList implements Iterable<Integer> {
                 return head!=null;
             }
 
-            public void remove() {
-
-            }
-
             public Integer next() {
                 Node tmp = head;
                 head = head.getNext();
