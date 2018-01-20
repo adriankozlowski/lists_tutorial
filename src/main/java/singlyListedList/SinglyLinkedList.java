@@ -125,21 +125,16 @@ public class SinglyLinkedList implements Iterable<Integer> {
 
     public Iterator<Integer> iterator() {
         return new Iterator<Integer>() {
-            Node nodeCurrent = head;
-            Node next = head;
-            public boolean hasNext() {
-                if(next == tail){
-                    nodeCurrent = head;
-                    next = head;
-                    return false;
-                }
-                return nodeCurrent != null;
+            Node naNastepnąIterację = head;
+            Node aktualnyDoZwrócenia = head;
+           public boolean hasNext() {//
+                return naNastepnąIterację != null;
             }
 
             public Integer next() {
-                next = nodeCurrent;
-                nodeCurrent = next.getNext();
-                return next.getValue();
+                aktualnyDoZwrócenia = naNastepnąIterację;
+                naNastepnąIterację = aktualnyDoZwrócenia.getNext();
+                return aktualnyDoZwrócenia.getValue();
             }
         };
     }
